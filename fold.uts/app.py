@@ -1,91 +1,90 @@
 import streamlit as st
 
 # 1. Pengaturan Dasar Halaman
-st.set_page_config(page_title="Portofolio Unyu", page_icon="🌸", layout="centered")
+st.set_page_config(page_title="Sharon - Portfolio", page_icon="🖤", layout="centered")
 
-# 2. Desain Tema Blackpink (CSS Custom)
+# 2. Desain Tema Blackpink Profesional (CSS Custom)
 st.markdown("""
 <style>
-    /* Mengubah warna background utama menjadi hitam/gelap */
+    /* Mengubah warna background utama menjadi hitam elegan */
     .stApp {
-        background-color: #121212;
-        color: #FFE4E1; /* Warna teks pink muda */
+        background-color: #0d0d0d;
+        color: #f8f9fa;
     }
     
-    /* Mengubah warna judul dan subjudul menjadi Hot Pink */
+    /* Menggunakan font profesional */
     h1, h2, h3, h4 {
-        color: #FF69B4 !important; 
-        font-family: 'Comic Sans MS', cursive, sans-serif; /* Font yang lebih santai */
+        color: #ff69b4 !important; 
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
 
-    /* Mengubah warna Tab Menu */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 20px;
-    }
+    /* Warna Tab yang lebih tenang */
     .stTabs [data-baseweb="tab"] {
-        color: #FFB6C1; 
-        font-weight: bold;
+        color: #888888; 
     }
     .stTabs [aria-selected="true"] {
-        color: #FF1493 !important;
-        border-bottom-color: #FF1493 !important;
+        color: #ff69b4 !important;
+        border-bottom-color: #ff69b4 !important;
     }
 
-    /* Desain kotak untuk daftar pengalaman */
+    /* Desain kartu proyek yang bersih */
     .kotak-pengalaman {
-        background-color: #1E1E1E;
-        padding: 20px;
-        border-radius: 15px;
-        border-left: 6px solid #FF69B4; /* Garis aksen pink di kiri */
-        margin-bottom: 15px;
-        color: white;
-        box-shadow: 2px 2px 10px rgba(255, 105, 180, 0.2);
+        background-color: #1a1a1a;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 4px solid #ff69b4;
+        margin-bottom: 20px;
+        transition: transform 0.2s;
+    }
+    .kotak-pengalaman:hover {
+        transform: scale(1.02);
     }
 </style>
 """, unsafe_allow_html=True)
 
-# 3. Bagian Judul Atas
-st.title("✨ Website Portofolio Sharon ✨")
-st.subheader("Welcome to My Space!")
-st.write("---")
+# 3. Bagian Header
+st.title("Sharon | Engineering Portfolio")
+st.markdown("---")
 
-# 4. Membuat Navigasi Menu (Tab)
-tab1, tab2 = st.tabs(["🏠 Home", "👩‍💻 Profile & Experience"])
+# 4. Navigasi
+tab1, tab2 = st.tabs(["🏠 Home", "👩‍💻 Professional Profile"])
 
 # --- ISI MENU HOME ---
 with tab1:
-    st.markdown("### Halo! Selamat datang di website pribadiku. 👋")
-    st.write("Silakan klik tab **Profile & Experience** di atas untuk melihat proyek-proyek teknik elektronika dan sistem kontrol yang pernah aku kerjakan.")")
+    st.markdown("### Profile Overview")
+    st.write("""
+    Selamat datang di portofolio profesional saya. 
+    Laman ini merangkum keahlian teknis dan pengalaman saya di bidang Teknik Elektro dan Sistem Kontrol. 
+    Fokus saya adalah pada pengembangan sistem cerdas, otomasi, dan efisiensi sistem berbasis mikrokontroler.
+    """)
 
 # --- ISI MENU PROFILE ---
 with tab2:
-    st.markdown("### 🛠️ My Projects & Experience")
-    st.write("Berikut adalah rekam jejak proyek yang pernah aku kembangkan:")
+    st.markdown("### Technical Expertise & Projects")
 
-    # Menggunakan HTML khusus agar tampilan kotaknya sesuai dengan CSS di atas
     st.markdown("""
     <div class="kotak-pengalaman">
-        <h4>🤖 Line Follower</h4>
-        <p>Merakit dan memprogram robot otonom yang dapat mengikuti jalur atau garis lintasan secara presisi menggunakan pembacaan sensor inframerah.</p>
+        <h4>🤖 Robotics: Line Follower</h4>
+        <p>Pengembangan robot otonom dengan algoritma kontrol presisi untuk navigasi lintasan menggunakan sensor inframerah.</p>
     </div>
     
     <div class="kotak-pengalaman">
-        <h4>📟 Embedded System</h4>
-        <p>Pengembangan sistem tersemat menggunakan mikrokontroler. Salah satu proyek utamaku adalah mendesain <b>Smart Lock System</b> menggunakan Arduino Uno (ATmega328P). Sistem ini dilengkapi dengan matriks Keypad untuk memasukkan kata sandi (menggunakan urutan kode spesifik 1, 2, 4, 7) dan layar LCD untuk menampilkan status penguncian pintu.</p>
+        <h4>📟 Embedded Systems: Smart Security</h4>
+        <p>Perancangan sistem akses keamanan pintu berbasis Arduino Uno, meliputi antarmuka Keypad (matriks 4x4) dan verifikasi kata sandi sekuensial.</p>
     </div>
     
     <div class="kotak-pengalaman">
-        <h4>🎛️ Instrumentasi</h4>
-        <p>Berpengalaman dalam melakukan kalibrasi instrumen, pembacaan sinyal sensor, dan memastikan akurasi data pada berbagai alat ukur elektronika.</p>
+        <h4>🎛️ Industrial Instrumentation</h4>
+        <p>Implementasi kalibrasi sensor dan akuisisi data elektronika untuk meningkatkan akurasi pembacaan parameter fisik.</p>
     </div>
     
     <div class="kotak-pengalaman">
-        <h4>⚙️ Sistem Control</h4>
-        <p>Merancang logika kendali otomatis, seperti pembuatan <b>Sistem Irigasi Sekuensial</b> untuk lahan pertanian. Sistem ini dirancang untuk mendistribusikan air dari toren ke beberapa zona secara bergantian berdasarkan pembacaan sensor kelembapan tanah. Terdapat juga sistem pengaman otomatis di mana semua katup akan tertutup jika sensor mendeteksi turunnya hujan.</p>
+        <h4>⚙️ Control Systems: Smart Irrigation</h4>
+        <p>Perancangan sistem kontrol otomatis berbasis kelembapan tanah untuk manajemen air lahan pertanian secara sekuensial dan efisien.</p>
     </div>
     
     <div class="kotak-pengalaman">
-        <h4>🐍 Program Python</h4>
-        <p>Menggunakan Python untuk pemrosesan logika, automasi tugas, hingga merancang antarmuka web interaktif berbasis data seperti website portofolio yang sedang kamu lihat saat ini.</p>
+        <h4>🐍 Python Programming</h4>
+        <p>Pemanfaatan Python untuk automasi logika sistem, pemrosesan data, serta pengembangan antarmuka web interaktif (seperti portofolio ini).</p>
     </div>
     """, unsafe_allow_html=True)
