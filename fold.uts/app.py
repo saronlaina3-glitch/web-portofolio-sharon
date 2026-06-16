@@ -46,7 +46,7 @@ st.markdown("""
 
 # 3. Bagian Judul Atas
 st.title("✨ Website Portofolio Sharon ✨")
-st.subheader("Welcome to My Space! BLINKs in the area~ 🖤🩷")
+st.subheader("Welcome to My Space!")
 st.write("---")
 
 # 4. Membuat Navigasi Menu (Tab)
@@ -55,14 +55,7 @@ tab1, tab2 = st.tabs(["🏠 Home", "👩‍💻 Profile & Experience"])
 # --- ISI MENU HOME ---
 with tab1:
     st.markdown("### Halo! Selamat datang di website pribadiku. 👋")
-    st.write("""
-    Website ini dibuat menggunakan bahasa pemrograman Python dan *library* Streamlit. 
-    Aku mendesainnya khusus dengan tema Blackpink agar terlihat *unyu* dan tidak membosankan!
-    
-    Silakan klik tab **Profile & Experience** di atas untuk melihat proyek-proyek teknik elektronika dan sistem kontrol yang pernah aku kerjakan.
-    """)
-    # Kamu bisa menambahkan gambar unyu dari internet pakai link seperti di bawah ini
-    st.image("https://media.giphy.com/media/26n6WvwZpFuYkF3TW/giphy.gif", width=350, caption="Have a nice day!")
+    st.write("Silakan klik tab **Profile & Experience** di atas untuk melihat proyek-proyek teknik elektronika dan sistem kontrol yang pernah aku kerjakan.")")
 
 # --- ISI MENU PROFILE ---
 with tab2:
